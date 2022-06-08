@@ -1,0 +1,3 @@
+[submodule "delete_vpc"]
+	path = delete_vpc
+	url = git@github.com:fijiwebdesign/delete_vpc.git
