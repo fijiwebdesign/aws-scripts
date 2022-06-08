@@ -1,0 +1,28 @@
+{
+  "name": "aws-scripts",
+  "version": "1.0.0",
+  "description": "A collection of automation scripts for AWS.",
+  "main": "aws.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "vpc:delete:all": "ts-node delete-all-vpc.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fijiwebdesign/aws-scripts.git"
+  },
+  "keywords": [
+    "aws",
+    "ec2",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fijiwebdesign/aws-scripts/issues"
+  },
+  "homepage": "https://github.com/fijiwebdesign/aws-scripts#readme"
+}

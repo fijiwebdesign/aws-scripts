@@ -1,5 +1,3 @@
-#!/bin/node
-
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
@@ -85,17 +83,18 @@ async function deleteVpcAndDependencies(id, region) {
   return awsExec(cmd)
 }
 
-
-async function start() {
-  const regions = await listRegionNames()
-  const vpcList = await describeVpcsForRegions(regions)
-  console.log(`Found ${vpcList.length} vpcs`)
-
-  vpcList.forEach(async vpc => {
-    console.log(`deleting vpc ${vpc.VpcId} at region ${vpc.region}`)
-    const resp = await deleteVpcAndDependencies(vpc.VpcId, vpc.region)
-    console.log('resp', resp)
-  })
+module.exports = {
+  awsExec,
+  awsExecJson,
+  describeRegions,
+  listRegionNames,
+  listInstanceNames,
+  shutDownInstances,
+  shutDownAllRunningInstances,
+  countAllInstances,
+  describeVpcsForRegion,
+  describeVpcsForRegions,
+  disableVpcClassicLink,
+  deleteVpc,
+  deleteVpcAndDependencies
 }
-
-//start()
